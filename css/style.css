@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css?family=Lora|Oranienbaum");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.landing-page {
+  background: #333;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+}
+@keyframes anim {
+  50% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.landing-page::after {
+  content: "";
+  background: url("/image/pexels-photo-374811.jpeg") no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  animation: anim 60s 5s ease-in-out infinite;
+  font-family: "Oranienbaum", serif;
+}
+.page-content {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 40px;
+}
+.page-content h1 {
+  color: #f1c40f;
+  font-size: 3.4rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  animation: header-anim 1s ease-in;
+  transition: 2s 1 linear;
+}
+
+.page-content h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: "Lora", serif;
+  animation: desc 5s linear;
+}
+.page-content a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+  display: inline-block;
+  text-transform: uppercase;
+
+  transition: 0.4s linear;
+}
+.page-content a:hover {
+  color: #fff;
+  background: #f1c40f;
+  border: 2px solid #fff;
+}
+.page-header {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #ddd;
+  position: absolute;
+  z-index: 1;
+}
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.nav ul {
+  list-style-type: none;
+  float: right;
+  margin-right: 20px;
+  padding: 10px;
+}
+.nav ul li {
+  display: inline-block;
+  padding: 10px;
+}
+.nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  transition: 0.5s all ease;
+  color: white;
+}
+.landing-page .nav ul li a:hover {
+  background: #ecf0f1;
+  color: red;
+}
+
+.contact-container {
+  background: #333;
+  color: white;
+  width: 100%;
+  height: 100vh;
+}
+.contact-content {
+  z-index: 1;
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 40px;
+}
+.contact-content .contact-method {
+  display: inline-block;
+  width: 250px;
+  margin: 10px;
+  height: 200px;
+  background: #2980b9;
+  position: relative;
+  cursor: pointer;
+}
+.contact-content .contact-method i {
+  position: absolute;
+  font-size: 30px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 140px;
+  background: #34495e;
+  z-index: 1;
+  transition: transform 0.5s linear;
+}
+.contact-method:hover i {
+  transform: translateY(-40px);
+}
+.contact-method span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+#about-section {
+  width: 100%;
+  height: 100vh;
+}
+.about-container {
+  width: 100%;
+  height: 100%;
+  background: #444;
+  position: absolute;
+}
+.about-content {
+}
+.about-content .about-image {
+  background: #fff;
+  width: 20%;
+  height: 220px;
+  border: 1px solid red;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+}
+.about-content .bio {
+  background: #fff;
+  width: 100%;
+  height: 220px;
+  display: block;
+}
+.nav ul > li:active a {
+  color: yellow;
+  background: white;
+}
+
+@keyframes header-anim {
+  0% {
+    opacity: 0;
+    margin-bottom: -50px;
+  }
+  50% {
+    opacity: 0.5;
+    margin-bottom: -25px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes desc {
+  0% {
+  }
+  100% {
+  }
+}
+@media screen and (max-width: 600px) {
+  .page-content h1 {
+    font-size: 1.4rem;
+  }
+  .page-content h3 {
+    font-size: 0.8rem;
+  }
+  .page-content a {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+  .contact-content {
+    top: 180%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+  .contact-method {
+    display: block;
+    width: 100px;
+
+    height: 50px !important;
+    border: 1px solid red;
+  }
+  .contact-method:hover i {
+    transform: rotateX(45deg);
+    background: transparent;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1170px) {
+  .page-content h1 {
+    font-size: 3rem;
+  }
+}
